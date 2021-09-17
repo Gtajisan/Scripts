@@ -33,7 +33,7 @@ fi
 
 sudo DEBIAN_FRONTEND=noninteractive \
     apt install \
-    adb autoconf automake axel bc bison build-essential \
+    adb autoconf automake axel bc bison build-essential repo \
     ccache clang cmake expat fastboot flex g++ \
     g++-multilib gawk gcc gcc-multilib git gnupg gperf \
     htop imagemagick lib32ncurses5-dev lib32z1-dev libtinfo5 libc6-dev libcap-dev \
@@ -58,7 +58,3 @@ if [[ "$(command -v make)" ]]; then
         bash "$(dirname "$0")"/make.sh "${LATEST_MAKE_VERSION}"
     fi
 fi
-
-echo "Installing repo"
-sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
-sudo chmod a+rx /usr/local/bin/repo
